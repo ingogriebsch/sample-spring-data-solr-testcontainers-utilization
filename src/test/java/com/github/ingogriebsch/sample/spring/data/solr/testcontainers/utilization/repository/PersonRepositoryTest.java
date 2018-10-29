@@ -10,8 +10,7 @@
 package com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.repository;
 
 import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.solr.SolrConstants.SOLR_CORE_NAME;
-import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrTestUtils.createSolrContainer;
-import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrTestUtils.getSolrUrl;
+import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrContainer.SOLR_IMAGE_NAME;
 import static java.util.UUID.randomUUID;
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -27,24 +26,20 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.testcontainers.containers.GenericContainer;
 
 import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.model.Person;
+import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrContainer;
 
 @ContextConfiguration(initializers = PersonRepositoryTest.SolrRelatedPropertiesInitializer.class)
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class PersonRepositoryTest {
 
-    private static final String SOLR_SERVER_DOCKER_IMAGE_NAME = "solr:6.6";
-    private static final int SOLR_SERVER_PORT = 8983;
-
     @Autowired
     private PersonRepository personRepository;
 
     @ClassRule
-    public static GenericContainer<?> solrServer =
-        createSolrContainer(SOLR_SERVER_DOCKER_IMAGE_NAME, SOLR_SERVER_PORT, SOLR_CORE_NAME);
+    public static SolrContainer solrContainer = new SolrContainer(SOLR_IMAGE_NAME + ":6.6").withCore(SOLR_CORE_NAME);
 
     @After
     public void after() {
@@ -87,7 +82,7 @@ public class PersonRepositoryTest {
 
         @Override
         public void initialize(ConfigurableApplicationContext configurableApplicationContext) {
-            String springDataSolrHost = "spring.data.solr.host=" + getSolrUrl(solrServer, SOLR_SERVER_PORT);
+            String springDataSolrHost = "spring.data.solr.host=" + solrContainer.getHost();
             addInlinedPropertiesToEnvironment(configurableApplicationContext, springDataSolrHost);
         }
     }
