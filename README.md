@@ -8,9 +8,9 @@ This sample shows you how to utilize the Testcontainers usage with Spring Data S
 
 ## Used frameworks
 Collection of the mainly used frameworks in this project. There are more, but they are not that present inside the main use case therefore they are not listed here.
-* [Spring Data Solr](https://docs.spring.io/spring-data/solr/docs/2.1.10.RELEASE/reference/html/)
-* [Spring Boot](https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/)
-* [Testcontainers](https://www.testcontainers.org/)
+*   [Spring Data Solr](https://docs.spring.io/spring-data/solr/docs/2.1.10.RELEASE/reference/html/)
+*   [Spring Boot](https://docs.spring.io/spring-boot/docs/1.5.10.RELEASE/reference/htmlsingle/)
+*   [Testcontainers](https://www.testcontainers.org/)
 
 ## License
 This code is open source software licensed under the [Apache 2.0 License](https://www.apache.org/licenses/LICENSE-2.0.html).
