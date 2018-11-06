@@ -117,7 +117,6 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>generate-build-info</id>
                         <goals>
                             <goal>build-info</goal>
                         </goals>
