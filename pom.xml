@@ -112,6 +112,42 @@
     <build>
         <plugins>
             <plugin>
+                <!-- https://github.com/walokra/markdown-page-generator-plugin -->
+                <groupId>com.ruleoftech</groupId>
+                <artifactId>markdown-page-generator-plugin</artifactId>
+                <version>2.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <inputDirectory>${project.basedir}</inputDirectory>
+                    <outputDirectory>${project.build.directory}/html</outputDirectory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!-- https://coderplus.github.io/copy-rename-maven-plugin -->
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>${project.build.directory}/html/README.html</sourceFile>
+                            <destinationFile>${project.build.outputDirectory}/static/index.html</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <!-- https://docs.spring.io/spring-boot/docs/1.15.10.RELEASE/maven-plugin -->
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
