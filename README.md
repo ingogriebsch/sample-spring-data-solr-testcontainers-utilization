@@ -1,5 +1,6 @@
 # Spring Data Solr Testcontainers utilization sample
 [![Build Status](https://travis-ci.org/ingogriebsch/sample-spring-data-solr-testcontainers-utilization.svg?branch=master)](https://travis-ci.org/ingogriebsch/sample-spring-data-solr-testcontainers-utilization)
+[![Codecov Status](https://codecov.io/gh/ingogriebsch/sample-spring-data-solr-testcontainers-utilization/branch/master/graph/badge.svg)](https://codecov.io/gh/ingogriebsch/sample-spring-data-solr-testcontainers-utilization)
 [![Coveralls Status](https://coveralls.io/repos/github/ingogriebsch/sample-spring-data-solr-testcontainers-utilization/badge.svg?branch=master)](https://coveralls.io/github/ingogriebsch/sample-spring-data-solr-testcontainers-utilization?branch=master)
 [![Codacy Status](https://api.codacy.com/project/badge/Grade/c8bb2e8a929f406db16114e64677ffa3)](https://www.codacy.com/app/ingo.griebsch/sample-spring-data-solr-testcontainers-utilization?utm_source=github.com&utm_medium=referral&utm_content=ingogriebsch/sample-spring-data-solr-testcontainers-utilization&utm_campaign=Badge_Grade)
 [![DepShield Status](https://depshield.sonatype.org/badges/ingogriebsch/sample-spring-data-solr-testcontainers-utilization/depshield.svg)](https://depshield.github.io)
