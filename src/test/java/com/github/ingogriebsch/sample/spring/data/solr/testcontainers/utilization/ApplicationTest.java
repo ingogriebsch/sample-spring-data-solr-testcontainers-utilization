@@ -20,7 +20,7 @@ public class ApplicationTest {
 
     @Test
     public void main_should_load_context() {
-        main(new String[] {});
+        main(new String[] { "--server.port=0" });
     }
 
 }
