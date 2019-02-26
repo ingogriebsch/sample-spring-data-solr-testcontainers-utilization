@@ -7,7 +7,7 @@ install: true
 jdk:
   - openjdk8
 language: java
-script: ./mvnw verify coveralls:report -B
+script: ./mvnw verify -B
 sudo: true
 services:
   - docker
