@@ -9,10 +9,9 @@
  */
 package com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.repository;
 
+import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.model.Person;
 import org.springframework.data.solr.repository.SolrCrudRepository;
 import org.springframework.stereotype.Repository;
-
-import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.model.Person;
 
 @Repository
 public interface PersonRepository extends SolrCrudRepository<Person, String> {

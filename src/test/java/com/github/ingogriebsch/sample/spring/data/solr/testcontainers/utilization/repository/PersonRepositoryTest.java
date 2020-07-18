@@ -9,13 +9,16 @@
  */
 package com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.repository;
 
+import static java.util.UUID.randomUUID;
+
 import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.solr.SolrConstants.SOLR_CORE_NAME;
 import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrContainer.SOLR_IMAGE_NAME;
-import static java.util.UUID.randomUUID;
 import static org.apache.commons.lang3.RandomUtils.nextInt;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.context.support.TestPropertySourceUtils.addInlinedPropertiesToEnvironment;
 
+import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.model.Person;
+import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrContainer;
 import org.junit.After;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -26,9 +29,6 @@ import org.springframework.context.ApplicationContextInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.model.Person;
-import com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.test.util.SolrContainer;
 
 @ContextConfiguration(initializers = PersonRepositoryTest.SolrRelatedPropertiesInitializer.class)
 @RunWith(SpringRunner.class)

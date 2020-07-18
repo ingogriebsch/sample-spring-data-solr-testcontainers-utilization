@@ -11,13 +11,12 @@ package com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilizati
 
 import static com.github.ingogriebsch.sample.spring.data.solr.testcontainers.utilization.solr.SolrConstants.SOLR_CORE_NAME;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.solr.core.mapping.Indexed;
-import org.springframework.data.solr.core.mapping.SolrDocument;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.solr.core.mapping.Indexed;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
 @AllArgsConstructor
 @Data

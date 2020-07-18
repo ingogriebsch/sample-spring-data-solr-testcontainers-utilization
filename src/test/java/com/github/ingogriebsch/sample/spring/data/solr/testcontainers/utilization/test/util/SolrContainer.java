@@ -13,12 +13,10 @@ import static org.apache.commons.lang3.StringUtils.isEmpty;
 
 import java.io.IOException;
 
-import org.testcontainers.containers.GenericContainer;
-
 import com.github.dockerjava.api.command.InspectContainerResponse;
-
 import lombok.NonNull;
 import lombok.SneakyThrows;
+import org.testcontainers.containers.GenericContainer;
 
 public class SolrContainer extends GenericContainer<SolrContainer> {
 
