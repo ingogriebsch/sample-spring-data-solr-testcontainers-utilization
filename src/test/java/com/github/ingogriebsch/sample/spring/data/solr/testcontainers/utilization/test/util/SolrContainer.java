@@ -70,7 +70,7 @@ public class SolrContainer extends GenericContainer<SolrContainer> {
 
     private static void assertCoreIsCreated(ExecResult execResult, String core) {
         if (execResult == null || execResult.getStdout() == null
-            || !execResult.getStdout().contains("Creating new core '" + core + "' using command")) {
+                || !execResult.getStdout().contains("Creating new core '" + core + "' using command")) {
             throw new IllegalStateException("Could not create core '" + core + "' on solr server!");
         }
     }
